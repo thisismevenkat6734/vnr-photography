@@ -1,0 +1,145 @@
+
+/* =================================
+   VNR PREMIUM 3D GOLD ANIMATION
+================================= */
+
+.logo {
+  perspective: 700px;
+}
+
+.logo-main {
+  display: inline-block;
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 5px;
+
+  color: #f8d77b;
+
+  background: linear-gradient(
+    135deg,
+    #fff5c4 0%,
+    #e9bd55 20%,
+    #fff1a8 40%,
+    #b77b18 60%,
+    #ffe9a0 80%,
+    #d49a32 100%
+  );
+
+  background-size: 250% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  filter: drop-shadow(0 3px 0 #80520c)
+          drop-shadow(0 6px 0 #593906)
+          drop-shadow(0 10px 8px rgba(0,0,0,.65));
+
+  transform-style: preserve-3d;
+  animation:
+    vnrGoldShine 5s linear infinite,
+    vnrFloat 4s ease-in-out infinite;
+}
+
+.logo-sub {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+/* MAIN HERO 3D VNR */
+
+.hero-content::before {
+  content: "VNR";
+  display: block;
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(90px, 19vw, 190px);
+  font-weight: 900;
+  letter-spacing: 15px;
+  line-height: 1.1;
+
+  background: linear-gradient(
+    135deg,
+    #fff9d8,
+    #e9bd55 25%,
+    #fff1a8 45%,
+    #a66b12 65%,
+    #ffdf80 85%,
+    #fff5c4
+  );
+
+  background-size: 250% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  filter:
+    drop-shadow(1px 2px 0 #a16a16)
+    drop-shadow(2px 4px 0 #80520c)
+    drop-shadow(3px 6px 0 #543608)
+    drop-shadow(0 12px 12px rgba(0,0,0,.8));
+
+  transform-style: preserve-3d;
+
+  animation:
+    vnrGoldShine 5s linear infinite,
+    vnrFloat 4s ease-in-out infinite;
+
+  margin-bottom: 10px;
+}
+
+/* GOLD LIGHT MOVEMENT */
+
+@keyframes vnrGoldShine {
+  0% {
+    background-position: 200% center;
+  }
+
+  100% {
+    background-position: -200% center;
+  }
+}
+
+/* FLOATING EFFECT */
+
+@keyframes vnrFloat {
+  0%, 100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotateX(3deg);
+  }
+}
+
+/* HERO HEADING ADJUSTMENT */
+
+.hero-content h1 {
+  margin-top: 5px;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 600px) {
+
+  .logo-main {
+    font-size: 34px;
+  }
+
+  .hero-content::before {
+    font-size: 90px;
+    letter-spacing: 8px;
+  }
+
+}
+
+/* REDUCED MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-main,
+  .hero-content::before {
+    animation: none;
+  }
+}
